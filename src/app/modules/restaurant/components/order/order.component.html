@@ -1,0 +1,12 @@
+<h2 class="d-flex justify-content-center">Place Your Order</h2>
+<div class="alert-success"></div>
+<hr />
+<ng-container *ngFor="let item of foodItems; let i = index">
+  <input #itemCheckbox (click)="updateOrder(item?.id, itemCheckbox.checked)" [checked]="orderItems.includes(item?.id)"
+    id="item{{i}}" type="checkbox">
+  <label for="item{{i}}">{{item?.name}} - {{item?.price}}</label>
+  <br />
+</ng-container>
+<hr />
+<button (click)="order()" [disabled]="orderItems?.length < 1" class="btn">Order</button>
+<span *ngIf="alert" class="text-{{alert}}">&nbsp;{{alert | titlecase}}</span>

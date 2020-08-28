@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-rms"
+    }
+  },
+  "defaultProject": "ng-rms",
+  "cli": {
+    "analytics": false
+  }
 }

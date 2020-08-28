@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.btn {
+  padding: 10px 25px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+}
+.btn:disabled {
+  background-color: #7a7a7a;
+  color: #ffffff;
+}
+.w-100 {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-success {
+  color: green;
+}
+.text-error {
+  color: red;
+}
+.table {
+  width: 100%;
+}
+.table,
+th,
+td {
+  border: 1px solid #000000;
+  border-spacing: 0;
+}
+th,
+td {
+  padding: 10px;
+}

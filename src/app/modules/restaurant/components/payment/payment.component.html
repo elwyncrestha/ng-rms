@@ -1,0 +1,39 @@
+<h2>Make Payment</h2>
+<hr />
+<ng-container *ngIf="processOrder">
+  <form (ngSubmit)="proceedPayment()" [formGroup]="paymentForm">
+    <h4>Customer: {{paymentForm?.get('order').value?.user?.name || 'N/A'}}</h4>
+    <h4>Total Amount: {{paymentForm?.get('totalAmount')?.value || 0}}</h4>
+    <label for="paidAmount"><strong>Paid Amount:</strong></label>&nbsp;
+    <input formControlName="paidAmount" id="paidAmount" type="number">
+    <h4>Return: {{paymentForm?.get('returnedAmount')?.value || 0}}</h4>
+    <button [disabled]="paymentForm.invalid" class="btn" type="submit">Pay</button>
+    <span *ngIf="alert" class="text-{{alert}}">&nbsp;{{alert | titlecase}}</span>
+  </form>
+  <hr />
+</ng-container>
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>S No.</th>
+      <th>Items</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="!orders || orders?.length < 1">
+      <td colspan="3">No records</td>
+    </tr>
+    <tr *ngFor=" let order of orders; let i=index;">
+      <td>{{i + 1}}</td>
+      <td class="text-left">
+        <ul>
+          <li *ngFor="let item of order?.items">{{item?.name}} - {{item?.price}}</li>
+        </ul>
+      </td>
+      <td>
+        <button (click)="process(order)" class="btn">Process</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
