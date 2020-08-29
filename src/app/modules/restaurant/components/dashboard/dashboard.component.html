@@ -1,7 +1,13 @@
 <h2>Dashboard</h2>
 <hr />
+<!-- Orders table start -->
 <div>
-  <h4>Today's orders</h4>
+  <h4>
+    <select [(ngModel)]="orderRangeType" (change)="fetchOrders()">
+      <option *ngFor="let range of DateRangeValues" value="{{ range }}">{{ range }}'s</option>
+    </select>
+    orders
+  </h4>
   <table class="table text-center">
     <thead>
       <tr>
@@ -26,8 +32,15 @@
     </tbody>
   </table>
 </div>
+<!-- Orders table end -->
+<!-- Payments table start -->
 <div>
-  <h4>Today's payments</h4>
+  <h4>
+    <select [(ngModel)]="paymentRangeType" (change)="fetchPayments()">
+      <option *ngFor="let range of DateRangeValues" value="{{ range }}">{{ range }}'s</option>
+    </select>
+    payments
+  </h4>
   <table class="table text-center">
     <thead>
       <tr>
@@ -57,3 +70,4 @@
   </table>
   <hr />
 </div>
+<!-- Payments table end -->

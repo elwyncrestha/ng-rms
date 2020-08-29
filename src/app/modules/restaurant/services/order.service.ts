@@ -31,9 +31,9 @@ export class OrderService {
     return this.http.get(api);
   }
 
-  public getOrdersBetween(start: Date, end: Date): Observable<any> {
+  public getOrdersBetween(obj: { start: Date; end: Date }): Observable<any> {
     const api = `${environment.server}/${OrderService.URL}/orderDateTime/between`;
 
-    return this.http.post(api, { start, end });
+    return this.http.post(api, obj);
   }
 }

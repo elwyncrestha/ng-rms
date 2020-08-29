@@ -3,6 +3,8 @@ import { Order } from '../../models/order.model';
 import { OrderService } from '../../services/order.service';
 import { Payment } from '../../models/payment.model';
 import { PaymentService } from '../../services/payment.service';
+import { DateRange } from '../../../../models/date-range.enum';
+import { DateUtils } from '../../../../utils/date.utils';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +13,10 @@ import { PaymentService } from '../../services/payment.service';
 })
 export class DashboardComponent implements OnInit {
   public todayOrders: Order[];
+  public orderRangeType: DateRange = DateRange.TODAY;
   public todayPayments: Payment[];
+  public paymentRangeType: DateRange = DateRange.TODAY;
+  public DateRangeValues = Object.values(DateRange);
 
   constructor(
     private orderService: OrderService,
@@ -23,23 +28,15 @@ export class DashboardComponent implements OnInit {
     this.fetchPayments();
   }
 
-  private fetchOrders(): void {
-    const start = new Date();
-    start.setHours(0, 0, 0, 0);
-    const end = new Date();
-    end.setHours(23, 59, 59, 999);
+  public fetchOrders(): void {
     this.orderService
-      .getOrdersBetween(start, end)
+      .getOrdersBetween(DateUtils.getDateRange(this.orderRangeType))
       .subscribe((response) => (this.todayOrders = response));
   }
 
-  private fetchPayments(): void {
-    const start = new Date();
-    start.setHours(0, 0, 0, 0);
-    const end = new Date();
-    end.setHours(23, 59, 59, 999);
+  public fetchPayments(): void {
     this.paymentService
-      .getPaymentsBetween(start, end)
+      .getPaymentsBetween(DateUtils.getDateRange(this.paymentRangeType))
       .subscribe((response) => (this.todayPayments = response));
   }
 }
