@@ -17,4 +17,10 @@ export class PaymentService {
 
     return this.http.post(api, payment);
   }
+
+  public getPaymentsBetween(start: Date, end: Date): Observable<any> {
+    const api = `${environment.server}/${PaymentService.URL}/paymentDateTime/between`;
+
+    return this.http.post(api, { start, end });
+  }
 }

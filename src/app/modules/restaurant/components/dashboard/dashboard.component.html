@@ -1,2 +1,59 @@
 <h2>Dashboard</h2>
 <hr />
+<div>
+  <h4>Today's orders</h4>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th>S No.</th>
+        <th>Order Time</th>
+        <th>Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!todayOrders || todayOrders?.length < 1">
+        <td colspan="3">No records</td>
+      </tr>
+      <tr *ngFor=" let order of todayOrders; let i=index;">
+        <td>{{i + 1}}</td>
+        <td>{{ order?.orderDateTime | date: 'medium'}}</td>
+        <td class="text-left">
+          <ul>
+            <li *ngFor="let item of order?.items">{{item?.name}} - {{item?.price}}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h4>Today's payments</h4>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th>S No.</th>
+        <th>Order Time</th>
+        <th>Items</th>
+        <th>Payment Time</th>
+        <th>Paid / Returned Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!todayPayments || todayPayments?.length < 1">
+        <td colspan="5">No records</td>
+      </tr>
+      <tr *ngFor=" let payment of todayPayments; let i=index;">
+        <td>{{i + 1}}</td>
+        <td>{{ payment?.order?.orderDateTime | date: 'medium'}}</td>
+        <td class="text-left">
+          <ul>
+            <li *ngFor="let item of payment?.order?.items">{{item?.name}} - {{item?.price}}</li>
+          </ul>
+        </td>
+        <td>{{ payment?.paymentDateTime | date: 'medium' }}</td>
+        <td>{{ payment?.paidAmount }} / {{ payment?.returnedAmount }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+</div>

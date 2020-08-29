@@ -36,6 +36,7 @@ export class PaymentComponent implements OnInit {
   }
 
   public proceedPayment(): void {
+    this.paymentForm.get('paymentDateTime').setValue(new Date());
     this.paymentService.save(this.paymentForm.value).subscribe(
       () => {
         this.alert = 'success';
@@ -56,6 +57,7 @@ export class PaymentComponent implements OnInit {
   private buildForm(): void {
     this.paymentForm = this.formBuilder.group({
       order: [undefined, Validators.required],
+      paymentDateTime: [undefined],
       totalAmount: [undefined],
       paidAmount: [undefined, Validators.required],
       returnedAmount: [undefined, Validators.required],

@@ -16,16 +16,18 @@
   <thead>
     <tr>
       <th>S No.</th>
+      <th>Order Time</th>
       <th>Items</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngIf="!orders || orders?.length < 1">
-      <td colspan="3">No records</td>
+      <td colspan="4">No records</td>
     </tr>
     <tr *ngFor=" let order of orders; let i=index;">
       <td>{{i + 1}}</td>
+      <td>{{ order?.orderDateTime | date: 'medium'}}</td>
       <td class="text-left">
         <ul>
           <li *ngFor="let item of order?.items">{{item?.name}} - {{item?.price}}</li>
