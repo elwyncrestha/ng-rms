@@ -7,6 +7,7 @@ import { OrderComponent } from './components/order/order.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     OrderComponent,
     PaymentComponent,
     DashboardComponent,
+    PieChartComponent,
   ],
   imports: [
     CommonModule,

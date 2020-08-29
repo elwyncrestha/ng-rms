@@ -2,6 +2,12 @@
 .d-flex {
   display: flex;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-50 {
+  flex: 0 0 50%;
+}
 .justify-content-center {
   justify-content: center;
 }

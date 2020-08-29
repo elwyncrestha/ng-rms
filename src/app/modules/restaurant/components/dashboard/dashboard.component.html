@@ -1,5 +1,32 @@
 <h2>Dashboard</h2>
 <hr />
+<ng-container *ngIf="chartData; else noChart">
+  <div class="d-flex flex-wrap">
+    <div *ngIf="chartData?.today" class="flex-50">
+      <app-pie-chart [data]="chartData?.today" chartId="1" chartLabel="Today's Orders VS Payments">
+      </app-pie-chart>
+    </div>
+    <div *ngIf="chartData?.last7" class="flex-50">
+      <app-pie-chart [data]="chartData?.last7" chartId="2" chartLabel="Last 7 day's Orders VS Payments">
+      </app-pie-chart>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap">
+    <div *ngIf="chartData?.month" class="flex-50">
+      <app-pie-chart [data]="chartData?.month" chartId="3" chartLabel="This Month's Orders VS Payments">
+      </app-pie-chart>
+    </div>
+    <div *ngIf="chartData?.year" class="flex-50">
+      <app-pie-chart [data]="chartData?.year" chartId="4" chartLabel="This Year's Orders VS Payments">
+      </app-pie-chart>
+    </div>
+  </div>
+  <hr />
+</ng-container>
+<ng-template #noChart>
+  <h2>Not enough data to display charts</h2>
+  <hr />
+</ng-template>
 <!-- Orders table start -->
 <div>
   <h4>
@@ -68,6 +95,5 @@
       </tr>
     </tbody>
   </table>
-  <hr />
 </div>
 <!-- Payments table end -->
