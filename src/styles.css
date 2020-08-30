@@ -19,9 +19,15 @@
   border-radius: 15px;
   text-decoration: none;
 }
+.btn:hover {
+  cursor: pointer;
+}
 .btn:disabled {
   background-color: #7a7a7a;
   color: #ffffff;
+}
+.btn-danger {
+  background-color: #ce7b7b;
 }
 .w-100 {
   width: 100%;

@@ -8,7 +8,7 @@ import { DateRangeDto } from '../models/date-range.dto';
   providedIn: 'root',
 })
 export class ChartService {
-  static URL = 'charts';
+  static URL = 'api/charts';
 
   constructor(private http: HttpClient) {}
 

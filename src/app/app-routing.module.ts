@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { LoginGuard } from './guards/login.guard';
+import { RestaurantGuard } from './guards/restaurant.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +13,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'restaurant',
@@ -18,6 +21,7 @@ const routes: Routes = [
       import('./modules/restaurant/restaurant.module').then(
         (m) => m.RestaurantModule
       ),
+    canLoad: [RestaurantGuard],
   },
 ];
 

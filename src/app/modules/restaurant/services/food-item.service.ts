@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class FoodItemService {
-  static URL = 'food-items';
+  static URL = 'api/food-items';
 
   constructor(private http: HttpClient) {}
 

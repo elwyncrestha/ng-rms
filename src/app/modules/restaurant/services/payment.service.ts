@@ -8,7 +8,7 @@ import { Payment } from '../models/payment.model';
   providedIn: 'root',
 })
 export class PaymentService {
-  static URL = 'payments';
+  static URL = 'api/payments';
 
   constructor(private http: HttpClient) {}
 

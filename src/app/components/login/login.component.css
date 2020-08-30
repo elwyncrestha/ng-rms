@@ -1,0 +1,12 @@
+.login-page {
+  padding-top: 20px;
+}
+label {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.form-group {
+  display: block;
+  padding: 10px;
+}

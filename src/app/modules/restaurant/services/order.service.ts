@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class OrderService {
-  static URL = 'orders';
+  static URL = 'api/orders';
 
   constructor(private http: HttpClient) {}
 
