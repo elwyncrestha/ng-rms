@@ -11,9 +11,9 @@ export class PieChartComponent implements OnInit, AfterViewInit {
   @Input() chartId: string;
   @Input() data: { HEADS: 'Orders' | 'Payments'; COUNT: number }[];
   private svg;
-  private margin = 50;
-  private width = 350;
-  private height = 200;
+  private margin = 40;
+  private width = 300;
+  private height = 180;
   // The radius of the pie chart is half the smallest side
   private radius = Math.min(this.width, this.height) / 2 - this.margin;
   private colors;

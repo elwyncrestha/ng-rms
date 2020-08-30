@@ -1,27 +1,37 @@
-# NgRms
+# Restaurant Management System - Angular Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Sprint Boot Backend
 
-## Code scaffolding
+You can use this [Spring Boot app](https://github.com/elwyncrestha/restaurant-management-system) which provides the APIs that this application consumes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Components overview
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Login Component\
+  ![Login Component](images/1login.jpg)
 
-## Running unit tests
+- Dashboard Component\
+  ![Dashboard Component](images/2dashboard.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Order Component
+  ![Order Component](images/3order.png)
 
-## Running end-to-end tests
+- Payment Component
+  ![Payment Component](images/4payment.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Payment Component Entry
+  ![Payment Component Entry](images/5payment.png)
 
-## Further help
+- Updated Dashboard Component
+  ![Updated Dashboard Component](images/6dashboard.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+
+## Video Demo
+
+Find the video [here](images/rms-demo.mp4).
